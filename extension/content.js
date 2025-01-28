@@ -10,10 +10,10 @@ const timeFormat = {
 const extensionStatusJSON_bug = {
   status: 400,
   message:
-    "<strong>Vambe encountered a new error</strong> <br /> Please report it <a href='https://github.com/vivek-nexus/Vambe/issues' target='_blank'>here</a>.",
+    "<strong>Vambe Einhard encountered a new error</strong> <br /> Please report it <a href='https://github.com/vivek-nexus/Vambe Einhard/issues' target='_blank'>here</a>.",
 };
 const reportErrorMessage =
-  "There is a bug in Vambe. Please report it at https://github.com/vivek-nexus/Vambe/issues";
+  "There is a bug in Vambe Einhard. Please report it at https://github.com/vivek-nexus/Vambe Einhard/issues";
 const mutationConfig = { childList: true, attributes: true, subtree: true };
 
 // Name of the person attending the meeting
@@ -91,7 +91,7 @@ async function checkExtensionStatus() {
     extensionStatusJSON: {
       status: 200,
       message:
-        "<strong>Vambe is running</strong> <br /> Do not turn off captions",
+        "<strong>Vambe Einhard is running</strong> <br /> Do not turn off captions",
     },
   });
 
@@ -216,7 +216,7 @@ function meetingRoutines(uiType) {
             showNotification({
               status: 400,
               message:
-                "<strong>Vambe is not running</strong> <br /> Turn on captions using the CC icon, if needed",
+                "<strong>Vambe Einhard is not running</strong> <br /> Turn on captions using the CC icon, if needed",
             });
           else showNotification(extensionStatusJSON);
         });
@@ -380,7 +380,7 @@ function transcriber(mutationsList, observer) {
             transcriptTextBuffer = currentTranscriptText;
             // Update buffers for next mutation
             beforeTranscriptText = currentTranscriptText;
-            // If a person is speaking for a long time, Google Meet does not keep the entire text in the spans. Starting parts are automatically removed in an unpredictable way as the length increases and Vambe will miss them. So we force remove a lengthy transcript node in a controlled way. Google Meet will add a fresh person node when we remove it and continue transcription. Vambe picks it up as a new person and nothing is missed.
+            // If a person is speaking for a long time, Google Meet does not keep the entire text in the spans. Starting parts are automatically removed in an unpredictable way as the length increases and Vambe Einhard will miss them. So we force remove a lengthy transcript node in a controlled way. Google Meet will add a fresh person node when we remove it and continue transcription. Vambe Einhard picks it up as a new person and nothing is missed.
             if (currentTranscriptText.length > 250) person.remove();
           }
         }

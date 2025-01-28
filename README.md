@@ -1,4 +1,4 @@
-# Vambe
+# Vambe Einhard
 
 Simple Google Meet transcripts. Private and open source.
 
@@ -27,15 +27,15 @@ View video on [YouTube](https://www.youtube.com/watch?v=ARL6HbkakX4)
 <br />
 <br />
 
-# How to use Vambe
+# How to use Vambe Einhard
 
 ![screenshot-2](/assets/screenshot-2.png)
-Vambe has two modes of operation.
+Vambe Einhard has two modes of operation.
 
 **In both modes, transcript will be automatically downloaded as a text file at the end of each meeting.**
 
 - **Auto mode:** Automatically records transcripts for all meetings
-- **Manual mode:** Switch on Vambe by clicking on captions icon in Google Meet (CC icon)
+- **Manual mode:** Switch on Vambe Einhard by clicking on captions icon in Google Meet (CC icon)
 
 > **Avoid closing the meeting tab to end the call.** If you do it by mistake, you can still download the last meeting transcript by opening the extension. This will be overwritten when a new meeting starts.
 
@@ -46,12 +46,12 @@ Vambe has two modes of operation.
 
 **Can I change the language of the transcript?**
 
-Yes. Vambe picks up the output of Google Meet captions. Google Meet captions supports variety of languages that you can choose from. Click the settings icon when captions start showing and change the language.
+Yes. Vambe Einhard picks up the output of Google Meet captions. Google Meet captions supports variety of languages that you can choose from. Click the settings icon when captions start showing and change the language.
 
 <br />
 <br />
 
 # Privacy policy
 
-Vambe Chrome extension does not collect any information from users in any manner. All processing/transcript storage happens within the user's Chrome browser and does not leave the device.
+Vambe Einhard Chrome extension does not collect any information from users in any manner. All processing/transcript storage happens within the user's Chrome browser and does not leave the device.
 The transcript may not always be accurate and is only intended to aid in improving productivity. It is the responsibility of the user to ensure they comply with any applicable laws/rules.

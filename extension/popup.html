@@ -66,20 +66,6 @@
 
   <body>
     <div>
-      <div style="margin-bottom: 2rem">
-        <div style="display: flex; gap: 1rem; align-items: center">
-          <img src="./icon.png" width="48px" height="48px" alt="" />
-          <div>
-            <h1 style="margin: 0px">Vambe</h1>
-            <p style="margin: 0px">
-              Simple Google Meet transcripts. Private and open source.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <hr style="margin-bottom: 2rem" />
-
       <div style="display: flex; gap: 0.25rem">
         <input type="radio" name="mode" id="auto-mode" />
         <label><b>Auto</b> (records transcripts for all meetings)</label>
@@ -97,6 +83,25 @@
           type="url"
           id="webhook-url"
           placeholder="https://your-webhook-url.com"
+          style="
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid white;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+          "
+        />
+      </div>
+
+      <div style="margin-bottom: 2rem">
+        <label for="owner-email" style="display: block; margin-bottom: 0.5rem"
+          ><b>Owner Email</b> (will be set as host email)</label
+        >
+        <input
+          type="email"
+          id="owner-email"
+          placeholder="your@email.com"
           style="
             width: 100%;
             padding: 0.5rem;

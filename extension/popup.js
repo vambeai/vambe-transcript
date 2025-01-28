@@ -2,20 +2,24 @@ window.onload = function () {
   const autoModeRadio = document.querySelector("#auto-mode");
   const manualModeRadio = document.querySelector("#manual-mode");
   const webhookUrlInput = document.querySelector("#webhook-url");
-  const lastMeetingTranscriptLink = document.querySelector(
-    "#last-meeting-transcript"
-  );
+  const ownerEmailInput = document.querySelector("#owner-email");
 
-  chrome.storage.sync.get(["operationMode", "webhookUrl"], function (result) {
-    if (result.operationMode == undefined) autoModeRadio.checked = true;
-    else if (result.operationMode == "auto") autoModeRadio.checked = true;
-    else if (result.operationMode == "manual") manualModeRadio.checked = true;
+  chrome.storage.sync.get(
+    ["operationMode", "webhookUrl", "ownerEmail"],
+    function (result) {
+      if (result.operationMode == undefined) autoModeRadio.checked = true;
+      else if (result.operationMode == "auto") autoModeRadio.checked = true;
+      else if (result.operationMode == "manual") manualModeRadio.checked = true;
 
-    // Set webhook URL from storage if exists
-    if (result.webhookUrl) {
-      webhookUrlInput.value = result.webhookUrl;
+      // Set webhook URL and owner email from storage if exists
+      if (result.webhookUrl) {
+        webhookUrlInput.value = result.webhookUrl;
+      }
+      if (result.ownerEmail) {
+        ownerEmailInput.value = result.ownerEmail;
+      }
     }
-  });
+  );
 
   autoModeRadio.addEventListener("change", function () {
     chrome.storage.sync.set({ operationMode: "auto" }, function () {});
@@ -24,10 +28,17 @@ window.onload = function () {
     chrome.storage.sync.set({ operationMode: "manual" }, function () {});
   });
 
-  // Save webhook URL when changed or input
+  // Save webhook URL and owner email when changed or input
   webhookUrlInput.addEventListener("input", function () {
     chrome.storage.sync.set(
       { webhookUrl: webhookUrlInput.value },
+      function () {}
+    );
+  });
+
+  ownerEmailInput.addEventListener("input", function () {
+    chrome.storage.sync.set(
+      { ownerEmail: ownerEmailInput.value },
       function () {}
     );
   });

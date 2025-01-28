@@ -34,7 +34,7 @@ chrome.tabs.onRemoved.addListener(function (tabid) {
 });
 
 function sendTranscriptToWebhook() {
-  chrome.storage.sync.get(["webhookUrl"], function (syncData) {
+  chrome.storage.sync.get(["webhookUrl", "ownerEmail"], function (syncData) {
     if (!syncData.webhookUrl) {
       console.log("No webhook URL configured");
       return;
@@ -56,11 +56,11 @@ function sendTranscriptToWebhook() {
             attendees.add(entry.personName.replace(/You/g, result.userName));
           });
 
-          // Extract host (first person in the transcript)
-          const host =
-            result.transcript.length > 0
-              ? result.transcript[0].personName.replace(/You/g, result.userName)
-              : result.userName;
+          // Use owner email as host email
+          const host = {
+            name: result.userName,
+            email: syncData.ownerEmail || "",
+          };
 
           // Prepare payload
           const payload = {
